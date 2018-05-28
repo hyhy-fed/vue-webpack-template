@@ -1,6 +1,6 @@
 'use strict'
 // Template version: {{ template_version }}
-// see http://vuejs-templates.github.io/webpack for documentation.
+// see https://github.com/hyhyued/vue-webpack-template for documentation.
 
 const path = require('path')
 
