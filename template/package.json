@@ -21,16 +21,10 @@
     {{/if_or}}
     {{#lint}}
     "lint": "eslint --ext .js,.vue src{{#unit}} test/unit{{/unit}}{{#e2e}} test/e2e/specs{{/e2e}}",
-    "precommit-lint": "echo 'Pre-commit run lint...' && exit 0",
+    "precommit": "npm run lint",
     {{/lint}}
     "build": "node build/build.js"
   },
-  {{#lint}}
-  "pre-commit": [
-    "precommit-lint",
-    "lint"
-  ],
-  {{/lint}}
   "dependencies": {
     "vue": "^2.5.16"{{#router}},
     "vue-router": "^3.0.1"{{/router}}
@@ -42,6 +36,7 @@
     "eslint-friendly-formatter": "^4.0.1",
     "eslint-loader": "^2.0.0",
     "eslint-plugin-vue": "^4.0.0",
+    "husky": "^0.14.3",
     {{#if_eq lintConfig "standard"}}
     "eslint-config-standard": "^11.0.0",
     "eslint-plugin-promise": "^3.4.0",
@@ -115,7 +110,6 @@
     "shelljs": "^0.8.1",
     "optimize-css-assets-webpack-plugin": "^4.0.0",
     "ora": "^2.0.0",
-    "pre-commit": "^1.2.2",
     "rimraf": "^2.6.0",
     "uglifyjs-webpack-plugin": "^1.1.1",
     "url-loader": "^1.0.1",
