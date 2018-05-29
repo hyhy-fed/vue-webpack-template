@@ -84,9 +84,16 @@
 </template>
 
 <script>
+import { login } from '../services/user'
 export default {
   name: 'HelloWorld',
   data () {
+    // for api test
+    login({
+      username:"user",
+      password:"pwd",
+    });
+
     return {
       msg: 'Welcome to Your Vue.js App'
     }
